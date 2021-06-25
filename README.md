@@ -18,3 +18,10 @@ be manually downloaded:
 1. `cd supplementary_data`
 2. `curl -OL https://github.com/Daniel-Liu-c0deb0t/diff-bench-paper/releases/download/v1.0/sequences.txt`
 3. `cd ..`
+
+## Building and running
+1. `cd supplementary_data/benchmark_codes`
+2. Check the `Makefile` to make sure it is using the right `gcc` versions.
+3. Run `./custom_bench.sh` to benchmark and print results.
+4. Run `./custom_scores.sh` to output scores as tab-separated files,
+for comparison against block aligner.

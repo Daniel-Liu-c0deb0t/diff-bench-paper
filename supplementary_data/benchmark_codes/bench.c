@@ -789,6 +789,13 @@ void print_path(
 	return;
 }
 
+static void print_str(uint8_t const* s, uint64_t len) {
+    for(uint64_t i = 0; i < len; i++){
+        printf("%c", " AC G   T"[s[i]]);
+    }
+    printf("\t");
+}
+
 static inline
 struct bench_pair_s bench_gaba_affine(
 	struct params p)
@@ -818,6 +825,12 @@ struct bench_pair_s bench_gaba_affine(
 		struct gaba_fill_s *f = gaba_dp_fill_root(dp, &asec, 0, &bsec, 0);
 		score += f->max;
 		bench_end(fill);
+
+#ifdef PRINT_SCORES
+            print_str((uint8_t const *)kv_at(p.seq, i * 2), kv_at(p.len, i * 2));
+            print_str((uint8_t const *)kv_at(p.seq, i * 2 + 1), kv_at(p.len, i * 2 + 1));
+            printf("%lld\t%lld\t%lld\n", f->max, 0, 0);
+#endif
 		
 		bench_start(trace);
 		struct gaba_alignment_s *r = gaba_dp_trace(dp, f, NULL, NULL);
@@ -1270,6 +1283,11 @@ int main(int argc, char *argv[])
 		}
 		kv_at(p.buf, i) = c;
 	}
+
+#ifdef PRINT_SCORES
+        bench_gaba_affine(p);
+        return;
+#endif
 
 	uint64_t cells = 0;
 	for(i = 0; i < kv_size(p.len)/2; i++) {

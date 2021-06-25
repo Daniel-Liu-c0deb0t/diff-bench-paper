@@ -1,10 +1,14 @@
 
+ifdef PRINT_SCORES
+FLAGS = -O3 -Wall -Wno-unused-function -march=native -DBENCH -DPRINT_SCORES -I.
+else
 FLAGS = -O3 -Wall -Wno-unused-function -march=native -DBENCH -I.
+endif
 
-CC = gcc
+CC = gcc-11
 CFLAGS = $(FLAGS) -std=c99
 
-CXX = g++
+CXX = g++-11
 CXXFLAGS = $(FLAGS) -std=c++14
 
 all: bench
