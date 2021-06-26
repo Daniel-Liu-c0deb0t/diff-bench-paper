@@ -16,8 +16,9 @@ initial code and paper are all by Suzuki and Kasahara.
 be manually downloaded:
 
 1. `cd supplementary_data`
-2. `curl -OL https://github.com/Daniel-Liu-c0deb0t/diff-bench-paper/releases/download/v1.0/sequences.txt`
-3. `cd ..`
+2. `curl -OL https://github.com/Daniel-Liu-c0deb0t/diff-bench-paper/releases/download/v1.0/sequences.txt.gz`
+3. `gunzip sequences.txt.gz`
+4. `cd ..`
 
 ## Building and running
 1. `cd supplementary_data/benchmark_codes`

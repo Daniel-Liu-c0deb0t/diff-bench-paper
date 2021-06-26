@@ -2,4 +2,5 @@
 *.tsv
 **.o
 supplementary_data/sequences.txt
+supplementary_data/sequences.txt.gz
 supplementary_data/benchmark_codes/bench
