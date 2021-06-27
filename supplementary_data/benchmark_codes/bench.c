@@ -827,9 +827,9 @@ struct bench_pair_s bench_gaba_affine(
 		bench_end(fill);
 
 #ifdef PRINT_SCORES
-            print_str((uint8_t const *)kv_at(p.seq, i * 2), kv_at(p.len, i * 2));
-            print_str((uint8_t const *)kv_at(p.seq, i * 2 + 1), kv_at(p.len, i * 2 + 1));
-            printf("%lld\t%lld\t%lld\n", f->max, 0, 0);
+        print_str((uint8_t const *)kv_at(p.seq, i * 2), kv_at(p.len, i * 2));
+        print_str((uint8_t const *)kv_at(p.seq, i * 2 + 1), kv_at(p.len, i * 2 + 1));
+        printf("%lld\t%lld\t%lld\n", f->max, 0, 0);
 #endif
 		
 		bench_start(trace);
@@ -1285,8 +1285,8 @@ int main(int argc, char *argv[])
 	}
 
 #ifdef PRINT_SCORES
-        bench_gaba_affine(p);
-        return;
+    bench_gaba_affine(p);
+    return;
 #endif
 
 	uint64_t cells = 0;
