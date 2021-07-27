@@ -1303,12 +1303,12 @@ int main(int argc, char *argv[])
 	print_result(p.table, "diff-raw", bench_diff_affine(p));
 	// print_result(p.table, "libgaba (linear)", bench_gaba_linear(p));
 	print_result(p.table, "libgaba", bench_gaba_affine(p));
-	print_result(p.table, "parasail", bench_parasail(p));
+	//print_result(p.table, "parasail", bench_parasail(p));
 	print_result(p.table, "edlib", bench_edlib(p));		/* edlib allows any encoding since it transforms input sequences to internal representations */
 
-	print_result(p.table, "blast", bench_blast(p));
+	//print_result(p.table, "blast", bench_blast(p));
 	print_result(p.table, "seqan", bench_seqan(p));
-	print_result(p.table, "wavefront", bench_wavefront(p));
+	//print_result(p.table, "wavefront", bench_wavefront(p));
 
 	/* convert to 2bit since score profile calculation overhead will be minimized with 2-bit encoding for the bwamem (ksw.c) implementation */
 	for(i = 0; i < kv_size(p.buf); i++) {
@@ -1317,7 +1317,7 @@ int main(int argc, char *argv[])
 		kv_at(p.buf, i) = trans[kv_at(p.buf, i)];
 	}
 
-	print_result(p.table, "bwamem", bench_bwamem(p));
+	//print_result(p.table, "bwamem", bench_bwamem(p));
 
 	if(p.table != 0) {
 		printf("\n");
